@@ -11,7 +11,7 @@ Discharge Date:
 Patient First Name: Grace
 Patient Last Name: Jackson
 Patient ID: 56995523
-Assigned Doctor: 45480927
+Assigned Doctor: 10496551
 Date of Birth: 19790915
 Blood Type: O+
 Diagnosis: Arthritis
@@ -21,7 +21,7 @@ Discharge Date:
 Patient First Name: Frank
 Patient Last Name: Lewis
 Patient ID: 61602279
-Assigned Doctor: 50418057
+Assigned Doctor: 10496551
 Date of Birth: 19680709
 Blood Type: AB
 Diagnosis: Flu
@@ -31,7 +31,7 @@ Discharge Date: 20231210
 Patient First Name: Henry
 Patient Last Name: Moore
 Patient ID: 81764070
-Assigned Doctor: -1
+Assigned Doctor: 51411429
 Date of Birth: 19730108
 Blood Type: A
 Diagnosis: Infection
@@ -41,7 +41,7 @@ Discharge Date:
 Patient First Name: Alice
 Patient Last Name: Moore
 Patient ID: 99017448
-Assigned Doctor: -1
+Assigned Doctor: 54434866
 Date of Birth: 19950319
 Blood Type: O+
 Diagnosis: Hypertension
@@ -51,9 +51,9 @@ Discharge Date: 20241227
 Patient First Name: Diana
 Patient Last Name: Anderson
 Patient ID: 33226493
-Assigned Doctor: 35033545
+Assigned Doctor: 54434866
 Date of Birth: 19660114
-Blood Type: O
+Blood Type: O-
 Diagnosis: Asthma
 Date of Admission: 20220430
 Discharge Date: 20240910
@@ -61,7 +61,7 @@ Discharge Date: 20240910
 Patient First Name: Frank
 Patient Last Name: Lewis
 Patient ID: 43281285
-Assigned Doctor: -1
+Assigned Doctor: 12861092
 Date of Birth: 19650921
 Blood Type: B
 Diagnosis: Anemia
@@ -71,7 +71,7 @@ Discharge Date: 20230808
 Patient First Name: Grace
 Patient Last Name: Moore
 Patient ID: 46045419
-Assigned Doctor: 92539003
+Assigned Doctor: 93791519
 Date of Birth: 19481209
 Blood Type: O+
 Diagnosis: Allergy
@@ -81,7 +81,7 @@ Discharge Date:
 Patient First Name: Bob
 Patient Last Name: Lewis
 Patient ID: 87946549
-Assigned Doctor: -1
+Assigned Doctor: 67007742
 Date of Birth: 19570105
 Blood Type: AB
 Diagnosis: Infection
@@ -91,7 +91,7 @@ Discharge Date: 20221030
 Patient First Name: John
 Patient Last Name: Clark
 Patient ID: 59254599
-Assigned Doctor: 84545667
+Assigned Doctor: 14586109
 Date of Birth: 20090214
 Blood Type: O-
 Diagnosis: Fracture
