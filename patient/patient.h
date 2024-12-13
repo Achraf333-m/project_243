@@ -9,29 +9,35 @@ private:
     std::string first_name, last_name, date_of_birth, blood_type, diagnosis, discharge_date, date_of_admission;
     long int patient_id, assigned_doctor;
 public:
+    //constructor
     Patient();
 
     // getters
     std::string getFName();
     std::string getLName();
-    std::string getBirth();
-    std::string getBlood();
+    long int getPatientID();
+    long int getAssignedDoctorID();
+    std::string getDateOfBirth();
+    std::string getBloodType();
     std::string getDiagnosis();
-    std::string getDischarge();
-    std::string getAdmission();
+    std::string getDischargeDate();
+    std::string getDateOfAdmission();
     
     // setters
-    void setFName();
-    void setLName();
-    void setBirth();
-    void setBlood();
-    void setDiagnosis();
-    void setDischarge();
-    void setAdmission();
+    void setFName(std::string fname);
+    void setLName(std::string lname);
+    void getPatientID(long int id);
+    void getAssignedDoctorID(long int doctorID);
+    void setDateOfBirth(std::string dob);
+    void setBloodType(std::string bType);
+    void setDiagnosis(std::string diag);
+    void setDischargeDate(std::string doa);
+    void setDateOfAdmission(std::string dDate);
     
     // methods
     std::string patient_status();
-   
+    void print_Patient_into();
+
 };
 
 #endif
