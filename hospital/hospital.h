@@ -24,7 +24,7 @@ public:
     void show_patient_by_id(long int id);
     void show_doctor_by_id(long int id);
     void show_assigned_doctor(long int id);
-    void show_assigned0_patients(long int id);
+    void show_assigned_patients(long int id);
 };
 
 #endif
