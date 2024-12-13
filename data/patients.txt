@@ -1,0 +1,105 @@
+Patient First Name: Charlie
+Patient Last Name: Jackson
+Patient ID: 91816199
+Assigned Doctor: -1
+Date of Birth: 19910801
+Blood Type: AB
+Diagnosis: Diabetes
+Date of Admission: 20221011
+Discharge Date: 
+-----------------------------------------
+Patient First Name: Grace
+Patient Last Name: Jackson
+Patient ID: 56995523
+Assigned Doctor: 45480927
+Date of Birth: 19790915
+Blood Type: O+
+Diagnosis: Arthritis
+Date of Admission: 20230715
+Discharge Date: 
+-----------------------------------------
+Patient First Name: Frank
+Patient Last Name: Lewis
+Patient ID: 61602279
+Assigned Doctor: 50418057
+Date of Birth: 19680709
+Blood Type: AB
+Diagnosis: Flu
+Date of Admission: 20230302
+Discharge Date: 20231210
+-----------------------------------------
+Patient First Name: Henry
+Patient Last Name: Moore
+Patient ID: 81764070
+Assigned Doctor: -1
+Date of Birth: 19730108
+Blood Type: A
+Diagnosis: Infection
+Date of Admission: 20220607
+Discharge Date: 
+-----------------------------------------
+Patient First Name: Alice
+Patient Last Name: Moore
+Patient ID: 99017448
+Assigned Doctor: -1
+Date of Birth: 19950319
+Blood Type: O+
+Diagnosis: Hypertension
+Date of Admission: 20220808
+Discharge Date: 20241227
+-----------------------------------------
+Patient First Name: Diana
+Patient Last Name: Anderson
+Patient ID: 33226493
+Assigned Doctor: 35033545
+Date of Birth: 19660114
+Blood Type: O
+Diagnosis: Asthma
+Date of Admission: 20220430
+Discharge Date: 20240910
+-----------------------------------------
+Patient First Name: Frank
+Patient Last Name: Lewis
+Patient ID: 43281285
+Assigned Doctor: -1
+Date of Birth: 19650921
+Blood Type: B
+Diagnosis: Anemia
+Date of Admission: 20220415
+Discharge Date: 20230808
+-----------------------------------------
+Patient First Name: Grace
+Patient Last Name: Moore
+Patient ID: 46045419
+Assigned Doctor: 92539003
+Date of Birth: 19481209
+Blood Type: O+
+Diagnosis: Allergy
+Date of Admission: 20230414
+Discharge Date: 
+-----------------------------------------
+Patient First Name: Bob
+Patient Last Name: Lewis
+Patient ID: 87946549
+Assigned Doctor: -1
+Date of Birth: 19570105
+Blood Type: AB
+Diagnosis: Infection
+Date of Admission: 20220926
+Discharge Date: 20221030
+-----------------------------------------
+Patient First Name: John
+Patient Last Name: Clark
+Patient ID: 59254599
+Assigned Doctor: 84545667
+Date of Birth: 20090214
+Blood Type: O-
+Diagnosis: Fracture
+Date of Admission: 20241006
+Discharge Date: 
+-----------------------------------------
+
+
+
+
+//Disclosure: this data was generated using ChatGPT
