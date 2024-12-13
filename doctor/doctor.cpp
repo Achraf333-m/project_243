@@ -75,7 +75,15 @@ void Doctor::setExperience() {
 void Doctor::setBonus() {
      bonus;
 }
-
+void Doctor::setBonus() {
+     bonus+1;
+}
+void Doctor::setBonus() {
+     bonus+2;
+}
+void Doctor::setBonus() {
+     bonus+3;
+}
 
 // methods
 
