@@ -5,17 +5,19 @@
 
 class Doctor {
     private:
-        std::string first_name, last_name, specialty;
+        std::string dfirst_name, dlast_name, specialty;
         long int doctor_id;
         int years_of_experience;
         double base_salary;
         double bonus;
+
     public:
+    //constructor 
     Doctor();
 
     // getters
-    std::string getFName();
-    std::string getLName();
+    std::string getDocFName();
+    std::string getDocLName();
     std::string getSpecialty();
     long int getId();
     int getExperience();
@@ -23,16 +25,16 @@ class Doctor {
     double getBonus();
 
     // setters
-    void setFName();
-    void setLName();
-    void setSpecialty();
-    void setId();
-    void setExperience();
-    void setBSalary();
-    void setBonus();
+    void setDocFName(std::string dFname);
+    void setDocLName(std::string dLname);
+    void setSpecialty(std::string specialty);
+    void setId(long int docID);
+    void setExperience(int experience);
+    void setBSalary(double baseSalary);
+    void setBonus(double bonus);
 
     // methods
-    double calculate_salary();
+    double calculate_salary();//calculate the salary 
     void print_Doctor_info();
 
 };

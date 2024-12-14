@@ -36,7 +36,7 @@ public:
     
     // methods
     std::string patient_status();
-    void print_Patient_into();
+    void print_Patient_info();
 
 };
 

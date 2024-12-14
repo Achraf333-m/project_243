@@ -7,20 +7,20 @@ Doctor::Doctor()
     base_salary = 0.0;
     bonus = 0.0;
     doctor_id = 0;
-    first_name = "";
-    last_name = "";
+    dfirst_name = "";
+    dlast_name = "";
     specialty = "";
     years_of_experience = 0;
 }
 
 // getters
 
-std::string Doctor::getFName() {
-    return first_name;
+std::string Doctor::getDocFName() {
+    return dfirst_name;
 }
 
-std::string Doctor::getLName() {
-    return last_name;
+std::string Doctor::getDocLName() {
+    return dlast_name;
 }
 
 std::string Doctor::getSpecialty() {
@@ -45,53 +45,49 @@ double Doctor::getBonus() {
 
 
 // setters
-
-// same thing goes for this, we need to discuss how we should be
-// setting the needed info
-void Doctor::setFName() {
-    first_name;
+void Doctor::setDocFName(std::string dFname) {
+    dfirst_name = dFname;
 }
 
-void Doctor::setLName() {
-    last_name;
+void Doctor::setDocLName(std::string dLname) {
+    dlast_name = dLname;
 }
 
-void Doctor::setSpecialty() {
-    specialty;
+void Doctor::setSpecialty(std::string specialty) {
+    specialty = specialty;
 }
 
-void Doctor::setId() {
-     doctor_id;
+void Doctor::setId(long int docID) {
+     doctor_id = docID;
 }
 
-void Doctor::setBSalary() {
-     base_salary;
+void Doctor::setBSalary(double baseSalary) {
+     base_salary = baseSalary;
 }
 
-void Doctor::setExperience() {
-     years_of_experience;
+void Doctor::setExperience(int experience) {
+     years_of_experience = experience;
 }
 
-void Doctor::setBonus() {
-     bonus;
+void Doctor::setBonus(double bonus) {
+     bonus = bonus;
 }
-void Doctor::setBonus() {
-     bonus+1;
-}
-void Doctor::setBonus() {
-     bonus+2;
-}
-void Doctor::setBonus() {
-     bonus+3;
-}
+
 
 // methods
-
-double Doctor::calculate_salary() {
-    // logic 
-    return base_salary * bonus + base_salary;
+double Doctor::calculate_salary() {//let me know tho 
+    return base_salary + (bonus + base_salary); // this only returns a number, if we want it to print then we can change the function
 }
 
 void Doctor::print_Doctor_info() {
-    // logic here
+    std::cout << "Doctor Information:" << std::endl;
+    std::cout << "First Name: " << dfirst_name << std::endl;
+    std::cout << "Last Name: " << dlast_name << std::endl;
+    std::cout << "Doctor ID: " << doctor_id << std::endl;
+    std::cout << "Specialty: " << specialty << std::endl;
+    std::cout << "Years of Experience: " << years_of_experience << std::endl;
+    std::cout << "Base Salary: " << base_salary << std::endl;
+    std::cout << "Performance Bonus: " << bonus * 100 << "%" << std::endl;
+    std::cout << "Calculated Salary: " << calculate_salary() << std::endl;
 }
+

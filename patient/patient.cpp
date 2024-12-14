@@ -18,19 +18,19 @@ Patient::Patient() {
 
 // getters
 
-std::string Patient::getAdmission() {
+std::string Patient::getDateOfAdmission() {
     return date_of_admission;
 }
-std::string Patient::getBirth() {
+std::string Patient::getDateOfBirth() {
     return date_of_birth;
 }
-std::string Patient::getBlood() {
+std::string Patient::getBloodType() {
     return blood_type;
 }
 std::string Patient::getDiagnosis() {
     return diagnosis;
 }
-std::string Patient::getDischarge() {
+std::string Patient::getDischargeDate() {
     return discharge_date;
 }
 std::string Patient::getFName() {
@@ -42,37 +42,65 @@ std::string Patient::getLName() {
 
 
 // setters
-//I WAS HERE
-
-// in here, we will have to see whether we should prompt the user
-// for data and if we are going to write it directly into the patients.txt file
-void Patient::setAdmission() {
-    date_of_admission;
+void Patient::setFName(std::string fname) {
+    first_name = fname;
 }
-void Patient::setBirth() {
-    date_of_birth;
+void Patient::setLName(std::string lname) {
+    last_name = lname;
 }
-void Patient::setBlood() {
-    blood_type;
+void Patient::getPatientID(long int id) {
+    patient_id = id;
 }
-void Patient::setDiagnosis() {
-    diagnosis;
+void Patient::getAssignedDoctorID(long int doctorID) {
+    assigned_doctor = doctorID;
 }
-void Patient::setDischarge() {
-    discharge_date;
+void Patient::setDateOfBirth(std::string dob) {
+    date_of_birth = dob;
 }
-void Patient::setFName() {
-    first_name;
+void Patient::setBloodType(std::string bType) {
+    blood_type = bType;
 }
-void Patient::setLName() {
-    last_name;
+void Patient::setDiagnosis(std::string diag) {
+    diagnosis = diag;
 }
-
+void Patient::setDischargeDate(std::string doa) {
+    discharge_date = doa;
+}
+void Patient::setDateOfAdmission(std::string dDate) {
+    date_of_admission = dDate;
+}
 
 
 // methods
 
 std::string Patient::patient_status() {
-    // logic
-    return "stable";
+     if (diagnosis.find("critical") != std::string::npos) {
+        return "Critical";
+    } 
+    else if (diagnosis.find("moderate") != std::string::npos) {
+        return "Moderate";
+    } 
+    else {
+        return "Stable";
+    }
 }
+
+void Patient::print_Patient_info()
+{
+std::cout << "Patient Information:" << std::endl;
+    std::cout << "First Name: " << first_name << std::endl;
+    std::cout << "Last Name: " << last_name << std::endl;
+    std::cout << "Patient ID: " << patient_id << std::endl;
+    std::cout << "Assigned Doctor ID: " << (assigned_doctor == -1 ? "None" : std::to_string(assigned_doctor)) << std::endl;
+    std::cout << "Date of Birth: " << date_of_birth << std::endl;
+    std::cout << "Blood Type: " << blood_type << std::endl;
+    std::cout << "Diagnosis: " << diagnosis << std::endl;
+    std::cout << "Date of Admission: " << date_of_admission << std::endl;
+    std::cout << "Discharge Date: " << (discharge_date.empty() ? "Not Discharged" : discharge_date) << std::endl;
+    std::cout << "Status: " << patient_status() << std::endl;
+
+
+}
+
+  
+
