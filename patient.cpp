@@ -54,10 +54,10 @@ void Patient::setFName(std::string fname) {
 void Patient::setLName(std::string lname) {
     last_name = lname;
 }
-void Patient::setPatientID(long int id) {
+void Patient::setPatientID(long int id){
     patient_id = id;
 }
-void Patient::setAssignedDoctorID(long int doctorID) {
+void Patient::setAssignedDoctorID(long int doctorID){
     assigned_doctor = doctorID;
 }
 void Patient::setDateOfBirth(std::string dob) {

@@ -1,5 +1,6 @@
 #include "hospital.h"
 #include <iostream>
+#include <limits>
 
 void make_selection(int&);
 void hospital_app(int, Hospital&);
@@ -16,7 +17,7 @@ int main() {
     return 0;
 }
 
-
+/*
 void make_selection(int &selection) {
     bool selecting = true;
     while (selecting) {
@@ -42,8 +43,33 @@ void make_selection(int &selection) {
     }
 
     }
-}
+}*/
 
+void make_selection(int &selection) {
+    bool selecting = true;
+    while (selecting) {
+        std::cout << "****** Welcome to your hospital app ******" << "\n\n\n"
+                  << "Please select one of the following options: \n"
+                  << "1. Find the oldest patient.\n"
+                  << "2. Report the number of critical patients.\n"
+                  << "3. Show patients data by ID.\n"
+                  << "4. Show doctor data by ID.\n"
+                  << "5. Show assigned doctor for a specific patient.\n"
+                  << "6. Show assigned patients for a given doctor.\n"
+                  << "7. Exit.\n"
+                  << "Your selection: ";
+        
+        std::cin >> selection;
+
+        if (std::cin.fail() || selection < 1 || selection > 7) {
+            std::cin.clear(); //clear the error flag
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //discard invalid input
+            std::cout << "Invalid option, please try again.\n";
+        } else {
+            selecting = false; //valid input, exit loop
+        }
+    }
+}
 
 void hospital_app(int selection, Hospital &montreal_hospital) {
     long int id{0};
@@ -82,3 +108,4 @@ void hospital_app(int selection, Hospital &montreal_hospital) {
             break;
     }
 }
+
