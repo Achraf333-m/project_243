@@ -39,6 +39,12 @@ std::string Patient::getFName() {
 std::string Patient::getLName() {
     return last_name;
 }
+long int Patient::getPatientID() {
+    return patient_id;
+}
+long int Patient::getAssignedDoctorID() {
+    return assigned_doctor;
+}
 
 
 // setters
