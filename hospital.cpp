@@ -24,10 +24,11 @@ Hospital::Hospital()
                 std::getline(patient_data, line);
                 i++;
             }
+            // this causes no problem
             size = std::stoi(line);
             patientptr = new Patient[size];
             i = 0;
-
+            line.clear();
             while (std::getline(patient_data, line))
             {
                 // ignoring the number at the top of the page and the empty lines
@@ -35,14 +36,10 @@ Hospital::Hospital()
                 {
                     continue;
                 }
-                else if (!line.empty() && line.size() < 5)
-                {
-                    size = std::stoi(line);
-                }
 
                 int limit = line.find(":");
                 // using only the value that comes after the colon.
-                std::string data_substr = line.substr(limit + 1);
+                std::string data_substr = line.substr(limit + 2);
                 switch (i)
                 {
                 case 0:
@@ -120,6 +117,7 @@ Hospital::Hospital()
             size = std::stoi(line);
             doctorptr = new Doctor[size];
             i = 0;
+            line.clear();
             while (std::getline(doctor_data, line))
             {
                 // ignoring the number at the top of the page and the empty lines
@@ -129,7 +127,7 @@ Hospital::Hospital()
                 }
                 int limit = line.find(":");
                 // using only the value that comes after the colon.
-                std::string data_substr = line.substr(limit + 1);
+                std::string data_substr = line.substr(limit + 2);
                 switch (i)
                 {
                 case 0:
