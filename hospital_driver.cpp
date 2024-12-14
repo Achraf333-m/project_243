@@ -28,7 +28,8 @@ void make_selection(int &selection) {
         << "4. Show doctor data by ID." << "\n"
         << "5. Show assigned doctor for specific patient." << "\n"
         << "6. Show assigned patients for a given doctor." << "\n"
-        << "7. Exit." << std::endl;
+        << "7. Exit." << std::endl
+        << "Your selection: ";
     try {
         std::cin >> selection;
         if (typeid(selection).name() != "integer" || selection < 1 || selection >= 7) {
@@ -45,6 +46,7 @@ void make_selection(int &selection) {
 
 
 void hospital_app(int selection, Hospital &montreal_hospital) {
+    long int id{0};
     switch (selection) {
         case 1:
             montreal_hospital.find_oldest_patient();
@@ -53,25 +55,21 @@ void hospital_app(int selection, Hospital &montreal_hospital) {
             montreal_hospital.count_critical_patients();
             break;
         case 3:
-            long int id{0};
             std::cout << "Enter patient ID: ";
             std::cin >> id;
             montreal_hospital.show_patient_by_id(id);
             break;
         case 4:
-            long int id{0};
             std::cout << "Enter doctor ID: ";
             std::cin >> id;
             montreal_hospital.show_doctor_by_id(id);
             break;
         case 5:
-            long int id{0};
             std::cout << "Enter patient ID: ";
             std::cin >> id;
             montreal_hospital.show_assigned_doctor(id);
             break;
         case 6:
-            long int id{0};
             std::cout << "Enter doctor ID: ";
             std::cin >> id;
             montreal_hospital.show_assigned_patients(id);
