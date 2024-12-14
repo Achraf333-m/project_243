@@ -8,11 +8,8 @@
 class Hospital
 {
 private:
-    std::vector<Patient> patient_v;
-    std::vector<Doctor> doctor_v;
-
-    std::vector<Patient> *patient_ptr = &patient_v;
-    std::vector<Doctor> *doctor_ptr = &doctor_v;
+    std::vector<Patient>* &patient_ptr;
+    std::vector<Doctor>* &doctor_ptr;
 
 public:
     Hospital();

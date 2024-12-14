@@ -1,60 +1,57 @@
-Doctor First Name: Sophia
-Doctor Last Name: Miller
-Doctor ID: 10496551
+7
+
+First_Name: Sophia
+Last_Name: Miller
+ID: 10496551
 Specialty: Orthopedics
-Years of Experience: 24
-Base Salary: 119465.57
-Performance Bonus (Percentage): 0.84
------------------------------------------
-Doctor First Name: Oliver
-Doctor Last Name: Anderson
-Doctor ID: 51411429
+Years_of_Experience: 24
+Base_Salary: 119465.57
+Performance_Bonus: 0.84
+
+First_Name: Oliver
+Last_Name: Anderson
+ID: 51411429
 Specialty: Dermatology
-Years of Experience: 28
-Base Salary: 283412.42
-Performance Bonus (Percentage): 0.34
------------------------------------------
-Doctor First Name: Sophia
-Doctor Last Name: Jones
-Doctor ID: 54434866
+Years_of_Experience: 28
+Base_Salary: 283412.42
+Performance_Bonus: 0.34
+
+First_Name: Sophia
+Last_Name: Jones
+ID: 54434866
 Specialty: Oncology
-Years of Experience: 13
-Base Salary: 163880.47
-Performance Bonus (Percentage): 0.47
------------------------------------------
-Doctor First Name: Michael
-Doctor Last Name: Jones
-Doctor ID: 12861092
+Years_of_Experience: 13
+Base_Salary: 163880.47
+Performance_Bonus: 0.47
+
+First_Name: Michael
+Last_Name: Jones
+ID: 12861092
 Specialty: Orthopedics
-Years of Experience: 38
-Base Salary: 161771.14
-Performance Bonus (Percentage): 0.13
------------------------------------------
-Doctor First Name: James
-Doctor Last Name: Brown
-Doctor ID: 14586109
+Years_of_Experience: 38
+Base_Salary: 161771.14
+Performance_Bonus: 0.13
+
+First_Name: James
+Last_Name: Brown
+ID: 14586109
 Specialty: Psychiatry
-Years of Experience: 14
-Base Salary: 106473.32
-Performance Bonus (Percentage): 0.69
------------------------------------------
-Doctor First Name: Emily
-Doctor Last Name: Johnson
-Doctor ID: 93791519
+Years_of_Experience: 14
+Base_Salary: 106473.32
+Performance_Bonus: 0.69
+
+First_Name: Emily
+Last_Name: Johnson
+ID: 93791519
 Specialty: Neurology
-Years of Experience: 20
-Base Salary: 139683.08
-Performance Bonus (Percentage): 0.06
------------------------------------------
-Doctor First Name: Ava
-Doctor Last Name: Miller
-Doctor ID: 67007742
+Years_of_Experience: 20
+Base_Salary: 139683.08
+Performance_Bonus: 0.06
+
+First_Name: Ava
+Last_Name: Miller
+ID: 67007742
 Specialty: Cardiology
-Years of Experience: 36
-Base Salary: 169793.74
-Performance Bonus (Percentage): 0.2
------------------------------------------
-
-
-
-//Disclosure: this data was generated using ChatGPT
+Years_of_Experience: 36
+Base_Salary: 169793.74
+Performance_Bonus: 0.2

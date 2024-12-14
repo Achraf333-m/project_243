@@ -26,8 +26,8 @@ public:
     // setters
     void setFName(std::string fname);
     void setLName(std::string lname);
-    void getPatientID(long int id);
-    void getAssignedDoctorID(long int doctorID);
+    void setPatientID(long int id);
+    void setAssignedDoctorID(long int doctorID);
     void setDateOfBirth(std::string dob);
     void setBloodType(std::string bType);
     void setDiagnosis(std::string diag);
