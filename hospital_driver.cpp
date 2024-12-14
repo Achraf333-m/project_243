@@ -1,4 +1,4 @@
-#include "hospital/hospital.h"
+#include "hospital.h"
 #include <iostream>
 
 void make_selection(int&);
