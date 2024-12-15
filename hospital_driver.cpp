@@ -51,11 +51,12 @@ void hospital_app(int selection, Hospital &montreal_hospital) {
             montreal_hospital.find_oldest_patient();
             break;
         case 2:
-            montreal_hospital.count_critical_patients();
+            std::cout << "The number of critical patients is: " << montreal_hospital.count_critical_patients() << std::endl;
             break;
         case 3:
             std::cout << "Enter patient ID: ";
             std::cin >> id;
+            std::cout << std::endl << "The patient with matching ID is: \n " << std::endl;
             montreal_hospital.show_patient_by_id(id);
             break;
         case 4:

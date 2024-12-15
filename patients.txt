@@ -9,7 +9,7 @@ Blood_Type: AB
 Diagnosis: critical_Diabetes
 Date_of_Admission: 20221011
 Discharge_Date: -1
-
+*****
 First_Name: Grace
 Last_Name: Jackson
 ID: 56995523
@@ -19,7 +19,7 @@ Blood_Type: O+
 Diagnosis: stable_Arthritis
 Date_of_Admission: 20230715
 Discharge_Date: -1
-
+*****
 First_Name: Frank
 Last_Name: Lewis
 ID: 61602279
@@ -29,7 +29,7 @@ Blood_Type: AB
 Diagnosis: moderate_Flu
 Date_of_Admission: 20230302
 Discharge_Date: 20231210
-
+*****
 First_Name: Henry
 Last_Name: Moore
 ID: 81764070
@@ -39,7 +39,7 @@ Blood_Type: A
 Diagnosis: moderate_Infection
 Date_of_Admission: 20220607
 Discharge_Date: -1
-
+*****
 First_Name: Alice
 Last_Name: Moore
 ID: 99017448
@@ -49,7 +49,7 @@ Blood_Type: O+
 Diagnosis: critical_Hypertension
 Date_of_Admission: 20220808
 Discharge_Date: 20241227
-
+*****
 First_Name: Diana
 Last_Name: Anderson
 ID: 33226493
@@ -59,7 +59,7 @@ Blood_Type: O-
 Diagnosis: stable_Asthma
 Date_of_Admission: 20220430
 Discharge_Date: 20240910
-
+*****
 First_Name: Frank
 Last_Name: Lewis
 ID: 43281285
@@ -69,7 +69,7 @@ Blood_Type: B
 Diagnosis: critical_Anemia
 Date_of_Admission: 20220415
 Discharge_Date: 20230808
-
+*****
 First_Name: Grace
 Last_Name: Moore
 ID: 46045419
@@ -79,7 +79,7 @@ Blood_Type: O+
 Diagnosis: moderate_Allergy
 Date_of_Admission: 20230414
 Discharge_Date: -1
-
+*****
 First_Name: Bob
 Last_Name: Lewis
 ID: 87946549
@@ -89,7 +89,7 @@ Blood_Type: AB
 Diagnosis: moderate_Infection
 Date_of_Admission: 20220926
 Discharge_Date: 20221030
-
+*****
 First_Name: John
 Last_Name: Clark
 ID: 59254599

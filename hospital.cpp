@@ -44,14 +44,13 @@ Hospital::Hospital()
                 else if (line.size() < 3 ) {
                     continue;
                 }
-                else if (line.empty() && i > 0)
+                
+                else if (line.find("*****") != -1)
                 {
-                    std::cout << "done \n ";
                     i = 0;
                     patientptr++;
                     continue;
                 }
-
                 int limit = line.find(":");
                 // using only the value that comes after the colon.
                 std::string data_substr = line.substr(limit + 1);
@@ -83,6 +82,7 @@ Hospital::Hospital()
 
                     break;
                 case 6:
+                    std::cerr << "Debug: setting diagnosis to " << data_substr << " at i " << i << " and " << patientptr->getFName() << " to int" << std::endl;
                     patientptr->setDiagnosis(data_substr);
 
                     break;
@@ -131,11 +131,15 @@ Hospital::Hospital()
             while (std::getline(doctor_data, line))
             {
                 // ignoring the number at the top of the page and the empty lines
-                if (line.size() < 3 || line.empty())
+                if (i == 0 && line.empty())
                 {
                     continue;
                 }
-                else if (line.empty() && i > 0)
+                else if (line.size() < 3 ) {
+                    continue;
+                }
+                
+                else if (line.find("*****") != -1)
                 {
                     i = 0;
                     doctorptr++;
@@ -172,7 +176,6 @@ Hospital::Hospital()
 
                     break;
                 case 6:
-                    std::cerr << "Debug: getting bonus " << data_substr << " at i " << i << " and " << doctorptr->getDocFName() << " to float" << std::endl;
 
                     doctorptr->setBonus(std::stof(data_substr));
 
@@ -229,10 +232,12 @@ void Hospital::find_oldest_patient()
 
 int Hospital::count_critical_patients()
 {
+    std::cout << size_p;
+    std::cout << "The diagnosis is being transferrred to this function: " << patientptr[2].getFName();
     int counter{0};
     for (int i = 0; i < size_p; i++)
     {
-        if (patientptr->patient_status() == "critical")
+        if (patientptr->patient_status() == "Critical")
         {
             counter++;
         }
@@ -304,8 +309,10 @@ void Hospital::show_doctor_by_id(long int id)
     bool found = false;
     try
     {
+        std::cout << size_d;
         for (int i = 0; i < size_d; i++)
         {
+            std::cout << patientptr[i].getFName();
             if (doctorptr->getId() == id)
             {
                 doctorptr->print_Doctor_info();
