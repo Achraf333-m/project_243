@@ -10,7 +10,7 @@ private:
     long int patient_id, assigned_doctor;
 public:
     //constructor
-    Patient();
+    Patient() = default;
 
     // getters
     std::string getFName();

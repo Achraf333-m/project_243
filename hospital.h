@@ -19,6 +19,9 @@ private:
 public:
     Hospital();
 
+    //maybe we can use these to load in the data from the files and then operate on the data (this will load it into the vectors)
+    void loadPatients(const std::string& filename);
+    void loadDoctors(const std::string& filename);
     // members
     void find_oldest_patient();
     int count_critical_patients();
