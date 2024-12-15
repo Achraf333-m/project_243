@@ -4,6 +4,11 @@
 #include <string>
 #include <fstream>
 
+Hospital::~Hospital(){
+    delete[] doctorptr;
+    delete[] patientptr;
+}
+
 Hospital::Hospital()
 {
     std::fstream patient_data;
