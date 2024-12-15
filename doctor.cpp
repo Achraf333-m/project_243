@@ -10,7 +10,7 @@ Doctor::Doctor()
     doctor_id = 0;
     dfirst_name = "";
     dlast_name = "";
-    specialty = "";
+    doc_specialty = "";
     years_of_experience = 0;
 }
 
@@ -25,7 +25,7 @@ std::string Doctor::getDocLName() {
 }
 
 std::string Doctor::getSpecialty() {
-    return specialty;
+    return doc_specialty;
 }
 
 long int Doctor::getId() {
@@ -55,7 +55,7 @@ void Doctor::setDocLName(std::string dLname) {
 }
 
 void Doctor::setSpecialty(std::string specialty) {
-    specialty = specialty;
+    doc_specialty = specialty;
 }
 
 void Doctor::setId(long int docID) {
@@ -85,7 +85,7 @@ void Doctor::print_Doctor_info() {
     std::cout << "First Name: " << dfirst_name << std::endl;
     std::cout << "Last Name: " << dlast_name << std::endl;
     std::cout << "Doctor ID: " << doctor_id << std::endl;
-    std::cout << "Specialty: " << specialty << std::endl;
+    std::cout << "Specialty: " << doc_specialty << std::endl;
     std::cout << "Years of Experience: " << years_of_experience << std::endl;
     std::cout << "Base Salary: " << base_salary << std::endl;
     std::cout << "Performance Bonus: " << std::fixed << std::setprecision(2) << bonus * 100 << "%" << std::endl;

@@ -11,6 +11,7 @@ Hospital::Hospital()
     std::string line;
     // int size{0};
     int i{0};
+    int index{0};
     int count{0};
 
     // opening and reading patients.txt
@@ -27,10 +28,10 @@ Hospital::Hospital()
             }
             // this causes no problem
             size_p = std::stol(line);
-            std::cout << size_p;
 
             patientptr = new Patient[size_p];
             i = 0;
+
             line.clear();
 
             while (std::getline(patient_data, line))
@@ -48,7 +49,7 @@ Hospital::Hospital()
                 else if (line.find("*****") != -1)
                 {
                     i = 0;
-                    patientptr++;
+                    index++;
                     continue;
                 }
                 int limit = line.find(":");
@@ -57,41 +58,39 @@ Hospital::Hospital()
                 switch (i)
                 {
                 case 0:
-                    patientptr->setFName(data_substr);
+                    patientptr[index].setFName(data_substr);
 
                     break;
                 case 1:
-                    patientptr->setLName(data_substr);
+                    patientptr[index].setLName(data_substr);
 
                     break;
                 case 2:
-                    std::cerr << "Debug: Converting " << data_substr << " at i " << i << " and " << patientptr->getFName() << " to int" << std::endl;
-                    patientptr->setPatientID(std::stol(data_substr));
+                    patientptr[index].setPatientID(std::stol(data_substr));
 
                     break;
                 case 3:
-                    patientptr->setAssignedDoctorID(std::stol(data_substr));
+                    patientptr[index].setAssignedDoctorID(std::stol(data_substr));
 
                     break;
                 case 4:
-                    patientptr->setDateOfBirth(data_substr);
+                    patientptr[index].setDateOfBirth(data_substr);
 
                     break;
                 case 5:
-                    patientptr->setBloodType(data_substr);
+                    patientptr[index].setBloodType(data_substr);
 
                     break;
                 case 6:
-                    std::cerr << "Debug: setting diagnosis to " << data_substr << " at i " << i << " and " << patientptr->getFName() << " to int" << std::endl;
-                    patientptr->setDiagnosis(data_substr);
+                    patientptr[index].setDiagnosis(data_substr);
 
                     break;
                 case 7:
-                    patientptr->setDateOfAdmission(data_substr);
+                    patientptr[index].setDateOfAdmission(data_substr);
 
                     break;
                 case 8:
-                    patientptr->setDischargeDate(data_substr);
+                    patientptr[index].setDischargeDate(data_substr);
 
                     break;
                 }
@@ -112,6 +111,7 @@ Hospital::Hospital()
     patient_data.close();
     line.clear();
     i = 0;
+    index = 0;
     try
     {
         doctor_data.open("doctors.txt", std::ios::in);
@@ -124,7 +124,6 @@ Hospital::Hospital()
                 i++;
             }
             size_d = std::stol(line);
-            std::cout << size_d;
             doctorptr = new Doctor[size_d];
             i = 0;
             line.clear();
@@ -142,7 +141,7 @@ Hospital::Hospital()
                 else if (line.find("*****") != -1)
                 {
                     i = 0;
-                    doctorptr++;
+                    index++;
                     continue;
                 }
                 int limit = line.find(":");
@@ -151,33 +150,32 @@ Hospital::Hospital()
                 switch (i)
                 {
                 case 0:
-                    doctorptr->setDocFName(data_substr);
+                    doctorptr[index].setDocFName(data_substr);
 
                     break;
                 case 1:
-                    doctorptr->setDocLName(data_substr);
+                    doctorptr[index].setDocLName(data_substr);
 
                     break;
                 case 2:
-                    std::cerr << "Debug: Converting " << data_substr << " at i " << i << " and " << doctorptr->getDocFName() << " to int" << std::endl;
-                    doctorptr->setId(std::stol(data_substr));
+                    doctorptr[index].setId(std::stol(data_substr));
 
                     break;
                 case 3:
-                    doctorptr->setSpecialty(data_substr);
+                    doctorptr[index].setSpecialty(data_substr);
 
                     break;
                 case 4:
-                    doctorptr->setExperience(std::stol(data_substr));
+                    doctorptr[index].setExperience(std::stol(data_substr));
 
                     break;
                 case 5:
-                    doctorptr->setBSalary(std::stol(data_substr));
+                    doctorptr[index].setBSalary(std::stol(data_substr));
 
                     break;
                 case 6:
 
-                    doctorptr->setBonus(std::stof(data_substr));
+                    doctorptr[index].setBonus(std::stof(data_substr));
 
                     break;
                 }
@@ -195,53 +193,51 @@ Hospital::Hospital()
     {
         std::cout << m;
     }
-
-    std::cout << size_d << " " << size_p << std::endl;
 }
 
 void Hospital::find_oldest_patient()
 {
     long int oldest{0};
-    int count;
+    int count{0};
+    int index{0};
     std::string dateofadmission;
 
-    std::cout << patientptr[0].getDiagnosis() << " and ";
-    std::cout << doctorptr[0].getSpecialty();
     while (count < size_p)
     {
-        int visit_duration = 20240101 - std::stoi(patientptr->getDateOfAdmission());
+        int visit_duration = 20240101 - std::stoi(patientptr[index].getDateOfAdmission());
         if (visit_duration > oldest)
         {
             oldest = visit_duration;
-            dateofadmission = patientptr->getDateOfAdmission();
+            dateofadmission = patientptr[index].getDateOfAdmission();
         }
         count++;
-        patientptr++;
+        index++;
     }
 
-    while (size_p--)
+    index = 0;
+    std::cout << std::endl << "The oldest patient's data is: \n" << std::endl;
+    while (index < size_p)
     {
-        if (dateofadmission == patientptr->getDateOfAdmission())
+        if (dateofadmission == patientptr[index].getDateOfAdmission())
         {
-            patientptr->print_Patient_info();
+            patientptr[index].print_Patient_info();
             break;
         }
-        patientptr++;
+        index++;
     }
 }
 
 int Hospital::count_critical_patients()
 {
-    std::cout << size_p;
-    std::cout << "The diagnosis is being transferrred to this function: " << patientptr[2].getFName();
     int counter{0};
+    int index{0};
     for (int i = 0; i < size_p; i++)
     {
-        if (patientptr->patient_status() == "Critical")
+        if (patientptr[index].patient_status() == "Critical")
         {
             counter++;
         }
-        patientptr++;
+        index++;
     }
 
     return counter;
@@ -250,18 +246,19 @@ int Hospital::count_critical_patients()
 void Hospital::doctors_by_specialty(std::string specialty)
 {
     bool found = false;
+    int index{0};
     if (size_d)
     {
         try
         {
             for (int i = 0; i < size_d; i++)
             {
-                if (doctorptr->getSpecialty() == specialty)
+                if (doctorptr[index].getSpecialty() == specialty)
                 {
-                    doctorptr->print_Doctor_info();
+                    doctorptr[index].print_Doctor_info();
                     found = true;
                 }
-                doctorptr++;
+                index++;
             }
             if (!found)
             {
@@ -282,16 +279,17 @@ void Hospital::doctors_by_specialty(std::string specialty)
 void Hospital::show_patient_by_id(long int id)
 {
     bool found = false;
+    int index{0};
     try
     {
         for (int i = 0; i < size_p; i++)
         {
-            if (patientptr->getPatientID() == id)
+            if (patientptr[index].getPatientID() == id)
             {
-                patientptr->print_Patient_info();
+                patientptr[index].print_Patient_info();
                 found = true;
             }
-            patientptr++;
+            index++;
         }
         if (!found)
         {
@@ -307,18 +305,17 @@ void Hospital::show_patient_by_id(long int id)
 void Hospital::show_doctor_by_id(long int id)
 {
     bool found = false;
+    int index{0};
     try
     {
-        std::cout << size_d;
         for (int i = 0; i < size_d; i++)
         {
-            std::cout << patientptr[i].getFName();
-            if (doctorptr->getId() == id)
+            if (doctorptr[index].getId() == id)
             {
-                doctorptr->print_Doctor_info();
+                doctorptr[index].print_Doctor_info();
                 found = true;
             }
-            doctorptr++;
+            index++;
         }
         if (!found)
         {
@@ -333,16 +330,17 @@ void Hospital::show_doctor_by_id(long int id)
 
 void Hospital::show_assigned_doctor(long int id)
 {
-    long int doctor_id;
+    long int doctor_id{0};
     bool found = false;
+    int index{0};
     for (int i = 0; i < size_p; i++)
     {
-        if (patientptr->getPatientID() == id)
+        if (patientptr[index].getPatientID() == id)
         {
-            doctor_id = patientptr->getAssignedDoctorID();
+            doctor_id = patientptr[index].getAssignedDoctorID();
             found = true;
         }
-        patientptr++;
+        index++;
     }
     if (!found)
     {
@@ -354,14 +352,16 @@ void Hospital::show_assigned_doctor(long int id)
     }
     else
     {
-        found ? std::cout << "The assigned doctor for this patient is: " : std::cout << "";
+        index = 0;
+        found ? std::cout << "The assigned doctor for this patient is: \n\n" : std::cout << "";
         for (int i = 0; i < size_d; i++)
         {
-            if (doctorptr->getId() == doctor_id)
+            if (doctorptr[index].getId() == doctor_id)
             {
-                doctorptr->print_Doctor_info();
+                doctorptr[index].print_Doctor_info();
+                break;
             }
-            doctorptr++;
+            index++;
         }
     }
 }
@@ -369,15 +369,17 @@ void Hospital::show_assigned_doctor(long int id)
 void Hospital::show_assigned_patients(long int id)
 {
     int count{0};
+    int index{0};
+    std::cout << "\nThe assigned patients for this doctor are: \n\n";
     for (int i = 0; i < size_p; i++)
     {
-        if (patientptr->getAssignedDoctorID() == id)
+        if (patientptr[index].getAssignedDoctorID() == id)
         {
-            patientptr->print_Patient_info();
+            patientptr[index].print_Patient_info();
             std::cout << std::endl;
             count++;
         }
-        patientptr++;
+        index++;
     }
     if (!count)
     {

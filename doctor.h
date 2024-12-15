@@ -5,7 +5,7 @@
 
 class Doctor {
     private:
-        std::string dfirst_name, dlast_name, specialty;
+        std::string dfirst_name, dlast_name, doc_specialty;
         long int doctor_id;
         int years_of_experience;
         double base_salary;

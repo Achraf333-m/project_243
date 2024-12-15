@@ -80,10 +80,10 @@ void Patient::setDateOfAdmission(std::string dDate) {
 // methods
 
 std::string Patient::patient_status() {
-     if (diagnosis.find_first_of("critical_") != std::string::npos) {
+     if (diagnosis.find("critical_") != std::string::npos) {
         return "Critical";
     } 
-    else if (diagnosis.find_first_of("moderate_") != std::string::npos) {
+    else if (diagnosis.find("moderate_") != std::string::npos) {
         return "Moderate";
     } 
     else {

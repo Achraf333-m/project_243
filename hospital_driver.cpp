@@ -20,7 +20,7 @@ int main() {
 void make_selection(int &selection) {
     bool selecting = true;
     while (selecting) {
-        std::cout << "****** Welcome to your hospital app ******" << "\n\n\n"
+        std::cout << "\n\n\n          Welcome to your hospital app            " << "\n\n\n"
                   << "Please select one of the following options: \n"
                   << "1. Find the oldest patient.\n"
                   << "2. Report the number of critical patients.\n"
@@ -51,7 +51,7 @@ void hospital_app(int selection, Hospital &montreal_hospital) {
             montreal_hospital.find_oldest_patient();
             break;
         case 2:
-            std::cout << "The number of critical patients is: " << montreal_hospital.count_critical_patients() << std::endl;
+            std::cout << "\nThe number of critical patients is: " << montreal_hospital.count_critical_patients() << std::endl;
             break;
         case 3:
             std::cout << "Enter patient ID: ";
