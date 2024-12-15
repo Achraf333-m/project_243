@@ -11,8 +11,7 @@ private:
 public:
     //constructor
     Patient();
-    ~Patient();
-    
+
     // getters
     std::string getFName();
     std::string getLName();
