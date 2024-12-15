@@ -17,34 +17,6 @@ int main() {
     return 0;
 }
 
-/*
-void make_selection(int &selection) {
-    bool selecting = true;
-    while (selecting) {
-    std::cout << "****** Welcome to your hospital app ******" << "\n\n\n"
-        << "Please select one of the following options: \n"
-        << "1. Find the oldest patient." << "\n"
-        << "2. Report the number of critical patients." << "\n"
-        << "3. Show patients data by ID." << "\n"
-        << "4. Show doctor data by ID." << "\n"
-        << "5. Show assigned doctor for specific patient." << "\n"
-        << "6. Show assigned patients for a given doctor." << "\n"
-        << "7. Exit." << std::endl
-        << "Your selection: ";
-    try {
-        std::cin >> selection;
-        if (typeid(selection).name() != "integer" || selection < 1 || selection >= 7) {
-            throw "Invalid option, please try again.";
-        } else {
-            selecting = false;
-        }
-    } catch (std::string m) {
-        std::cout << m << std::endl;
-    }
-
-    }
-}*/
-
 void make_selection(int &selection) {
     bool selecting = true;
     while (selecting) {
@@ -65,6 +37,7 @@ void make_selection(int &selection) {
             std::cin.clear(); //clear the error flag
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //discard invalid input
             std::cout << "Invalid option, please try again.\n";
+
         } else {
             selecting = false; //valid input, exit loop
         }

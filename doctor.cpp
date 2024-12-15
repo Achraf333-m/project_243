@@ -1,5 +1,6 @@
 #include "doctor.h"
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 Doctor::Doctor()
@@ -76,7 +77,7 @@ void Doctor::setBonus(double bonus) {
 
 // methods
 double Doctor::calculate_salary() {//let me know tho 
-    return base_salary + (bonus + base_salary); // this only returns a number, if we want it to print then we can change the function
+    return base_salary + (bonus * base_salary); // this only returns a number, if we want it to print then we can change the function
 }
 
 void Doctor::print_Doctor_info() {
@@ -87,7 +88,7 @@ void Doctor::print_Doctor_info() {
     std::cout << "Specialty: " << specialty << std::endl;
     std::cout << "Years of Experience: " << years_of_experience << std::endl;
     std::cout << "Base Salary: " << base_salary << std::endl;
-    std::cout << "Performance Bonus: " << bonus * 100 << "%" << std::endl;
+    std::cout << "Performance Bonus: " << std::fixed << std::setprecision(2) << bonus * 100 << "%" << std::endl;
     std::cout << "Calculated Salary: " << calculate_salary() << std::endl;
 }
 

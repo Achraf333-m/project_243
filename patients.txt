@@ -6,9 +6,9 @@ ID: 91816199
 Assigned_Doctor: -1
 Date_of_Birth: 19910801
 Blood_Type: AB
-Diagnosis: critical Diabetes
+Diagnosis: critical_Diabetes
 Date_of_Admission: 20221011
-Discharge_Date: 
+Discharge_Date: -1
 
 First_Name: Grace
 Last_Name: Jackson
@@ -16,9 +16,9 @@ ID: 56995523
 Assigned_Doctor: 10496551
 Date_of_Birth: 19790915
 Blood_Type: O+
-Diagnosis: stable Arthritis
+Diagnosis: stable_Arthritis
 Date_of_Admission: 20230715
-Discharge_Date: 
+Discharge_Date: -1
 
 First_Name: Frank
 Last_Name: Lewis
@@ -26,7 +26,7 @@ ID: 61602279
 Assigned_Doctor: 10496551
 Date_of_Birth: 19680709
 Blood_Type: AB
-Diagnosis: moderate Flu
+Diagnosis: moderate_Flu
 Date_of_Admission: 20230302
 Discharge_Date: 20231210
 
@@ -36,9 +36,9 @@ ID: 81764070
 Assigned_Doctor: 51411429
 Date_of_Birth: 19730108
 Blood_Type: A
-Diagnosis: moderate Infection
+Diagnosis: moderate_Infection
 Date_of_Admission: 20220607
-Discharge_Date: 
+Discharge_Date: -1
 
 First_Name: Alice
 Last_Name: Moore
@@ -46,7 +46,7 @@ ID: 99017448
 Assigned_Doctor: 54434866
 Date_of_Birth: 19950319
 Blood_Type: O+
-Diagnosis: critical Hypertension
+Diagnosis: critical_Hypertension
 Date_of_Admission: 20220808
 Discharge_Date: 20241227
 
@@ -56,7 +56,7 @@ ID: 33226493
 Assigned_Doctor: 54434866
 Date_of_Birth: 19660114
 Blood_Type: O-
-Diagnosis: stable Asthma
+Diagnosis: stable_Asthma
 Date_of_Admission: 20220430
 Discharge_Date: 20240910
 
@@ -66,7 +66,7 @@ ID: 43281285
 Assigned_Doctor: 12861092
 Date_of_Birth: 19650921
 Blood_Type: B
-Diagnosis: critical Anemia
+Diagnosis: critical_Anemia
 Date_of_Admission: 20220415
 Discharge_Date: 20230808
 
@@ -76,9 +76,9 @@ ID: 46045419
 Assigned_Doctor: 93791519
 Date_of_Birth: 19481209
 Blood_Type: O+
-Diagnosis: moderate Allergy
+Diagnosis: moderate_Allergy
 Date_of_Admission: 20230414
-Discharge_Date: 
+Discharge_Date: -1
 
 First_Name: Bob
 Last_Name: Lewis
@@ -86,7 +86,7 @@ ID: 87946549
 Assigned_Doctor: 67007742
 Date_of_Birth: 19570105
 Blood_Type: AB
-Diagnosis: moderate Infection
+Diagnosis: moderate_Infection
 Date_of_Admission: 20220926
 Discharge_Date: 20221030
 
@@ -96,6 +96,6 @@ ID: 59254599
 Assigned_Doctor: 14586109
 Date_of_Birth: 20090214
 Blood_Type: O-
-Diagnosis: critical Fracture
+Diagnosis: critical_Fracture
 Date_of_Admission: 20241006
-Discharge_Date: 
+Discharge_Date: -1

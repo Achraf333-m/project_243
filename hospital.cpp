@@ -9,8 +9,9 @@ Hospital::Hospital()
     std::fstream patient_data;
     std::fstream doctor_data;
     std::string line;
-    int size{0};
+    // int size{0};
     int i{0};
+    int count{0};
 
     // opening and reading patients.txt
     try
@@ -25,69 +26,77 @@ Hospital::Hospital()
                 i++;
             }
             // this causes no problem
-            size = std::stoi(line);
-            patientptr = new Patient[size];
+            size_p = std::stol(line);
+            std::cout << size_p;
+
+            patientptr = new Patient[size_p];
             i = 0;
             line.clear();
+
             while (std::getline(patient_data, line))
             {
+                
                 // ignoring the number at the top of the page and the empty lines
-                if (line.empty())
+                if (i == 0 && line.empty())
                 {
+                    continue;
+                }
+                else if (line.size() < 3 ) {
+                    continue;
+                }
+                else if (line.empty() && i > 0)
+                {
+                    std::cout << "done \n ";
+                    i = 0;
+                    patientptr++;
                     continue;
                 }
 
                 int limit = line.find(":");
                 // using only the value that comes after the colon.
-                std::string data_substr = line.substr(limit + 2);
+                std::string data_substr = line.substr(limit + 1);
                 switch (i)
                 {
                 case 0:
                     patientptr->setFName(data_substr);
-                    // patient_ptr->at(j).setFName(data_substr);
+
                     break;
                 case 1:
                     patientptr->setLName(data_substr);
-                    // patient_ptr->at(j).setLName(data_substr);
+
                     break;
                 case 2:
-                    patientptr->setPatientID(std::stoi(data_substr));
-                    // patient_ptr->at(j).setPatientID(std::stoi(data_substr));
+                    std::cerr << "Debug: Converting " << data_substr << " at i " << i << " and " << patientptr->getFName() << " to int" << std::endl;
+                    patientptr->setPatientID(std::stol(data_substr));
+
                     break;
                 case 3:
-                    patientptr->setAssignedDoctorID(std::stoi(data_substr));
-                    // patient_ptr->at(j).setAssignedDoctorID(std::stoi(data_substr));
+                    patientptr->setAssignedDoctorID(std::stol(data_substr));
+
                     break;
                 case 4:
                     patientptr->setDateOfBirth(data_substr);
-                    // patient_ptr->at(j).setDateOfBirth(data_substr);
+
                     break;
                 case 5:
                     patientptr->setBloodType(data_substr);
-                    // patient_ptr->at(j).setBloodType(data_substr);
+
                     break;
                 case 6:
                     patientptr->setDiagnosis(data_substr);
-                    // patient_ptr->at(j).setDiagnosis(data_substr);
+
                     break;
                 case 7:
                     patientptr->setDateOfAdmission(data_substr);
-                    // patient_ptr->at(j).setDateOfAdmission(data_substr);
+
                     break;
                 case 8:
                     patientptr->setDischargeDate(data_substr);
-                    // patient_ptr->at(j).setDischargeDate(data_substr);
+
                     break;
                 }
                 // incrementing i to go over methods
                 i++;
-                // once i reaches 9 (the empty space between each patient), it resets to 0 and increments j
-                // i.e moves to the next object in the vector.
-                if (i % 10 == 0)
-                {
-                    i = 0;
-                    patientptr++;
-                }
             }
         }
         else
@@ -114,15 +123,22 @@ Hospital::Hospital()
                 std::getline(doctor_data, line);
                 i++;
             }
-            size = std::stoi(line);
-            doctorptr = new Doctor[size];
+            size_d = std::stol(line);
+            std::cout << size_d;
+            doctorptr = new Doctor[size_d];
             i = 0;
             line.clear();
             while (std::getline(doctor_data, line))
             {
                 // ignoring the number at the top of the page and the empty lines
-                if (line.empty() || line.size() < 5)
+                if (line.size() < 3 || line.empty())
                 {
+                    continue;
+                }
+                else if (line.empty() && i > 0)
+                {
+                    i = 0;
+                    doctorptr++;
                     continue;
                 }
                 int limit = line.find(":");
@@ -132,42 +148,39 @@ Hospital::Hospital()
                 {
                 case 0:
                     doctorptr->setDocFName(data_substr);
-                    // doctor_ptr->at(j).setDocFName(data_substr);
+
                     break;
                 case 1:
                     doctorptr->setDocLName(data_substr);
-                    // doctor_ptr->at(j).setDocLName(data_substr);
+
                     break;
                 case 2:
-                    doctorptr->setId(std::stoi(data_substr));
-                    // doctor_ptr->at(j).setId(std::stoi(data_substr));
+                    std::cerr << "Debug: Converting " << data_substr << " at i " << i << " and " << doctorptr->getDocFName() << " to int" << std::endl;
+                    doctorptr->setId(std::stol(data_substr));
+
                     break;
                 case 3:
                     doctorptr->setSpecialty(data_substr);
-                    // doctor_ptr->at(j).setSpecialty(data_substr);
+
                     break;
                 case 4:
-                    doctorptr->setExperience(std::stoi(data_substr));
-                    // doctor_ptr->at(j).setExperience(std::stoi(data_substr));
+                    doctorptr->setExperience(std::stol(data_substr));
+
                     break;
                 case 5:
-                    doctorptr->setBSalary(std::stoi(data_substr));
-                    // doctor_ptr->at(j).setBSalary(std::stoi(data_substr));
+                    doctorptr->setBSalary(std::stol(data_substr));
+
                     break;
                 case 6:
-                    doctorptr->setBonus(std::stod(data_substr));
-                    // doctor_ptr->at(j).setBonus(std::stod(data_substr));
+                    std::cerr << "Debug: getting bonus " << data_substr << " at i " << i << " and " << doctorptr->getDocFName() << " to float" << std::endl;
+
+                    doctorptr->setBonus(std::stof(data_substr));
+
                     break;
                 }
                 // incrementing i to go over methods
                 i++;
-                // once i reaches 7 (the empty space between each patient after 7 data values), it resets to 0 and increments j
-                // i.e moves to the next object in the vector.
-                if (i == 7)
-                {
-                    i = 0;
-                    doctorptr++;
-                }
+
             }
         }
         else
@@ -180,9 +193,7 @@ Hospital::Hospital()
         std::cout << m;
     }
 
-    size_p = sizeof(patientptr)/sizeof(patientptr[0]);
-    size_d = sizeof(doctorptr)/sizeof(doctorptr[0]);
-
+    std::cout << size_d << " " << size_p << std::endl;
 }
 
 void Hospital::find_oldest_patient()
@@ -190,7 +201,9 @@ void Hospital::find_oldest_patient()
     long int oldest{0};
     int count;
     std::string dateofadmission;
-    
+
+    std::cout << patientptr[0].getDiagnosis() << " and ";
+    std::cout << doctorptr[0].getSpecialty();
     while (count < size_p)
     {
         int visit_duration = 20240101 - std::stoi(patientptr->getDateOfAdmission());
@@ -198,14 +211,15 @@ void Hospital::find_oldest_patient()
         {
             oldest = visit_duration;
             dateofadmission = patientptr->getDateOfAdmission();
-            
         }
         count++;
         patientptr++;
     }
 
-    while (size_p--) {
-        if (dateofadmission == patientptr->getDateOfAdmission()) {
+    while (size_p--)
+    {
+        if (dateofadmission == patientptr->getDateOfAdmission())
+        {
             patientptr->print_Patient_info();
             break;
         }
@@ -233,24 +247,26 @@ void Hospital::doctors_by_specialty(std::string specialty)
     bool found = false;
     if (size_d)
     {
-        try {
-        for (int i = 0; i < size_d; i++)
+        try
         {
-            if (doctorptr->getSpecialty() == specialty)
+            for (int i = 0; i < size_d; i++)
             {
-                doctorptr->print_Doctor_info();
-                found = true;
+                if (doctorptr->getSpecialty() == specialty)
+                {
+                    doctorptr->print_Doctor_info();
+                    found = true;
+                }
+                doctorptr++;
             }
-            doctorptr++;
+            if (!found)
+            {
+                throw "No doctor has the mentioned specialty.";
+            }
         }
-        if (!found) {
-            throw "No doctor has the mentioned specialty.";
-        }
-
-        } catch (std::string m) {
+        catch (std::string m)
+        {
             std::cout << m << std::endl;
         }
-
     }
     else
     {
@@ -274,12 +290,12 @@ void Hospital::show_patient_by_id(long int id)
         }
         if (!found)
         {
-            throw "No patient has the provided ID.";
+            throw std::runtime_error("No patient has the provided ID.");
         }
     }
-    catch (std::string message)
+    catch (std::runtime_error message)
     {
-        std::cout << message << std::endl;
+        std::cout << message.what() << std::endl;
     }
 }
 
@@ -299,12 +315,12 @@ void Hospital::show_doctor_by_id(long int id)
         }
         if (!found)
         {
-            throw "No doctor has the provided ID.";
+            throw std::runtime_error("No doctor has the provided ID.");
         }
     }
-    catch (std::string message)
+    catch (std::runtime_error message)
     {
-        std::cout << message << std::endl;
+        std::cout << message.what() << std::endl;
     }
 }
 
