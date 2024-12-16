@@ -9,7 +9,7 @@ class Doctor {
         long int doctor_id;
         int years_of_experience;
         double base_salary;
-        double bonus;
+        double doc_bonus;
 
     public:
     //constructor 

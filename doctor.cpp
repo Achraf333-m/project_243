@@ -6,7 +6,7 @@
 Doctor::Doctor()
 {
     base_salary = 0.0;
-    bonus = 0.0;
+    doc_bonus = 0.0;
     doctor_id = 0;
     dfirst_name = "";
     dlast_name = "";
@@ -42,7 +42,7 @@ int Doctor::getExperience() {
 }
 
 double Doctor::getBonus() {
-    return bonus;
+    return doc_bonus;
 }
 
 
@@ -72,24 +72,24 @@ void Doctor::setExperience(int experience) {
 }
 
 void Doctor::setBonus(double bonus) {
-     bonus = bonus;
+     doc_bonus = bonus;
 }
 
 
 // methods
-double Doctor::calculate_salary() {//let me know tho 
-    return base_salary + (bonus * base_salary); // this only returns a number, if we want it to print then we can change the function
+double Doctor::calculate_salary() {
+    return base_salary + (doc_bonus * base_salary);
 }
 
 void Doctor::print_Doctor_info() {
-    std::cout << "Doctor Information:" << std::endl;
+    std::cout << "\nDoctor Information:" << std::endl;
     std::cout << "First Name: " << dfirst_name << std::endl;
     std::cout << "Last Name: " << dlast_name << std::endl;
     std::cout << "Doctor ID: " << doctor_id << std::endl;
     std::cout << "Specialty: " << doc_specialty << std::endl;
     std::cout << "Years of Experience: " << years_of_experience << std::endl;
     std::cout << "Base Salary: " << base_salary << std::endl;
-    std::cout << "Performance Bonus: " << std::fixed << std::setprecision(2) << bonus * 100 << "%" << std::endl;
+    std::cout << "Performance doc: " << std::fixed << std::setprecision(2) << doc_bonus * 100.00 << "%" << std::endl;
     std::cout << "Calculated Salary: " << calculate_salary() << std::endl;
 }
 

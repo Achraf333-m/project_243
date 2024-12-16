@@ -14,7 +14,6 @@ Hospital::Hospital()
     std::fstream patient_data;
     std::fstream doctor_data;
     std::string line;
-    // int size{0};
     int i{0};
     int index{0};
     int count{0};
@@ -31,12 +30,10 @@ Hospital::Hospital()
                 std::getline(patient_data, line);
                 i++;
             }
-            // this causes no problem
             size_p = std::stol(line);
 
             patientptr = new Patient[size_p];
             i = 0;
-
             line.clear();
 
             while (std::getline(patient_data, line))
@@ -50,7 +47,7 @@ Hospital::Hospital()
                 else if (line.size() < 3 ) {
                     continue;
                 }
-                
+                // if line is between objects, ignore it but reset i and move to the next object
                 else if (line.find("*****") != -1)
                 {
                     i = 0;
